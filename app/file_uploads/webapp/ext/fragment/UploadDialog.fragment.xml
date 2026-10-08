@@ -1,0 +1,43 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:unified="sap.ui.unified">
+
+    <Dialog
+        id="uploadDialog"
+        title="Importar Excel">
+
+        <content>
+
+            <VBox class="sapUiSmallMargin">
+
+                <unified:FileUploader
+                    id="fileUploader"
+                    fileType="xlsx,xls,csv"
+                    multiple="false"
+                    uploadOnChange="false"
+                    width="100%"
+                    change=".onFileChange" />
+
+            </VBox>
+
+        </content>
+
+        <beginButton>
+            <Button
+                id="importarButton"
+                type="Emphasized"
+                text="importar Excel"
+                press=".onImportExcel"/>
+        </beginButton>
+
+        <endButton>
+            <Button
+                id="cancelarButton"
+                text="Cancelar"
+                press=".onCloseDialog"/>
+        </endButton>
+
+    </Dialog>
+
+</core:FragmentDefinition>

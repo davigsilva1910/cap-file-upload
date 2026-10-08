@@ -1,0 +1,25 @@
+{
+  "name": "excel-import",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "@sap/cds": "^10",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^3",
+    "cds-plugin-ui5": "^0.17.0",
+    "ui5-tooling-modules": "^3.39.0"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "watch-file_uploads": "cds watch --open fileuploads/index.html?sap-ui-xx-viewCache=false --livereload false"
+  },
+  "private": true,
+  "workspaces": [
+    "app/*"
+  ],
+  "sapux": [
+    "app/file_uploads"
+  ]
+}
