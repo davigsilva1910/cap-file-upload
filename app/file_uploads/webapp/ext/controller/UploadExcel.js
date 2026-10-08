@@ -9,6 +9,7 @@ sap.ui.define([
 
     let dialogo;
     let arquivoSelecionado;
+    let extension;
 
     function lerArquivo(file) {
 
@@ -54,6 +55,7 @@ sap.ui.define([
          * @param aSelectedContexts the selected contexts of the table rows.
          */
         onUploadExcel: async function () {
+            extension = this;
             if (!dialogo) {
                 dialogo = await Fragment.load({
                     id: ID_FRAGMENT,
@@ -92,6 +94,8 @@ sap.ui.define([
                             })
 
                             dialogo.close();
+
+                            window.location.reload();
 
                             // console.log("Status: " + response.status)
 

@@ -8,7 +8,3 @@ service ParameterService {
         data: LargeString
     );
 }
-
-annotate ParameterService.importExcel with @Common.SideEffects: {
-    TargetEntities: ['/ParameterService.EntityContainer/Locations']
-}
