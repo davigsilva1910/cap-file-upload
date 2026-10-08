@@ -83,7 +83,21 @@ sap.ui.define([
                             const arquivoLido = await lerArquivo(arquivoSelecionado);
                             const rows = lerExcel(arquivoLido);
                             
-                            console.log(rows);
+                            const response = await fetch("/odata/v4/parameter/importExcel", {
+                                method: "POST",
+                                headers: {
+                                    "Content-Type": "application/json"
+                                },
+                                body: JSON.stringify({ data: JSON.stringify(rows) })
+                            })
+
+                            dialogo.close();
+
+                            // console.log("Status: " + response.status)
+
+                            // if(response.status === 204) {
+                            //     MessageToast.show("Importação realizada com sucesso")
+                            // }
                         },
 
                         onCloseDialog: function () {

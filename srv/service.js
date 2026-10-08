@@ -1,15 +1,17 @@
-// const cds = require("@sap/cds");
+const cds = require("@sap/cds");
 
-// module.exports = cds.service.impl(function() {
-//     this.on('importExcel', async (req) => {
-//         const rows= JSON.parse(req.data.data);
+module.exports = cds.service.impl(function () {
 
-//         const {Locations} = this.entities;
+    this.on("importExcel", async (req) => {
 
-//         await UPSERT
-//                 .into(Locations)
-//                 .rows(rows)
+        const rows = JSON.parse(req.data.data);
 
-//         return { imported: rows.length };
-//     })
-// })
+        const { Locations } = cds.entities("db");
+
+        await UPSERT
+            .into(Locations)
+            .entries(rows);
+
+    });
+
+});

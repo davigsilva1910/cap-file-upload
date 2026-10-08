@@ -1,7 +1,7 @@
 {
   "name": "excel-import",
   "version": "1.0.0",
-  "type": "module",
+  "type": "commonjs",
   "dependencies": {
     "@sap/cds": "^10",
     "xlsx": "^0.18.5"
